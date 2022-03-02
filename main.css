@@ -1,0 +1,470 @@
+body {
+  min-width:540px;
+  font-family: 'VT323', monospace;
+  background-color:#212529;
+  color:white;
+  overflow-x:hidden;
+}
+
+.headline {
+  font-size:3rem;
+  text-align:center;
+  margin-top:-2rem;
+  z-index:999;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  49% {opacity:1;}
+  50% {opacity: 0;}
+  99% {opacity: 0;}
+}
+
+/** menu stuff **/
+.menu {
+  padding:1rem;
+  z-index:999;
+}
+
+.btn-bs {
+  font-size: calc(1.375rem + 1.5vw)!important;
+  padding: 1.5rem!important;
+}
+
+/** sky stuff **/
+#sky {
+  height: 150px;
+  z-index:-999;
+  animation: scroll-sky 250s infinite linear;
+}
+.sky-dawn {
+  background:
+    url(https://i.imgur.com/q01fan4.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.sky-blue {
+  background:
+    url(https://i.imgur.com/ziTV2mM.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.sky-dusk {
+  background:
+    url(https://i.imgur.com/57kmasZ.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.sky-night {
+  background:
+    url(https://i.imgur.com/uUYpiS5.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.sky-desert {
+  background:
+    url(https://i.imgur.com/HqB1Vvw.png)
+    repeat-x;
+  background-size: auto 100%;
+  filter:grayscale(.8);
+}
+
+.sky-range {
+  background:
+    url(https://i.imgur.com/rNfHEUt.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+@keyframes scroll-sky {
+  0% { background-position: 0 0; }
+  100% { background-position: -1632px 0; }
+}
+
+#background {
+  top:0;
+  height:240px;
+  position:absolute;
+  z-index:1;
+}
+
+.bg-woods {
+  background:
+    url(https://i.imgur.com/6WTbsce.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.bg-desert {
+  background:
+    url(https://i.imgur.com/Ql84dPW.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.scroll-bg {
+  animation: scroll-bg 150s infinite linear;
+}
+
+@keyframes scroll-bg {
+  0% { background-position: 0 0; }
+  100% { background-position: -3836px 0; }
+}
+
+/** ground stuff **/
+#ground {
+  top:100px;
+  height:500px;
+  position:absolute;
+}
+
+.ground-woods {
+  background:
+    url(https://i.imgur.com/bz7jmAb.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.ground-desert {
+  background:
+    url(https://i.imgur.com/bnZzSQ5.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.scroll-ground {
+  animation: scroll-ground 150s infinite linear;
+}
+
+@keyframes scroll-ground {
+  0% { background-position: 0 0; }
+  100% { background-position: -3836px 0; }
+}
+
+/** foreground stuff**/
+#foreground {
+  background-size: auto 100%;
+  bottom:0%;
+  height:450px;
+  position:absolute;
+  z-index:5;
+}
+
+.fg-woods {
+  background:
+    url(https://i.imgur.com/FqDILQs.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.fg-desert {
+  background:
+    url(https://i.imgur.com/ROfFzkH.png)
+    repeat-x;
+  background-size: auto 100%;
+}
+
+.scroll-fg {
+  animation: scroll-fg 150s infinite linear;
+}
+
+@keyframes scroll-fg {
+  0% { background-position: 0 0; }
+  100% { background-position: -6000px 0; }
+}
+
+/** sprite stuff **/
+
+.sprite-container {
+  transform:scale(1.5);
+  z-index:3;
+  margin-top:30%;
+}
+
+#sprite {
+  position:absolute;
+  width:30px;
+  height:36px;
+  z-index:3;
+}
+
+.cart {
+  position:absolute;
+  width:260px;
+  height:125px;
+  top:20%;
+  z-index:1;
+}
+
+.no-cart {
+  display:none;
+}
+
+.cart-move {
+  background:
+    url(https://i.imgur.com/u6MQCVs.png) 0 0;
+}
+
+.anim-cart {
+  animation-name: anim-cart; 
+  animation-duration: 2s;
+  animation-timing-function: steps(5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes anim-cart {
+  from { background-position: 0px; }
+  to { background-position: 1300px; }
+}
+
+.rogue-idle {
+  background:
+    url(https://i.imgur.com/gskNWUe.png) 0 0;
+}
+
+.coleton-walk {
+  background:
+    url(https://i.imgur.com/88NSBxM.png) 0 0;
+  animation: walk 1s steps(6) infinite;
+}
+
+.joel-walk {
+  background:
+    url(https://i.imgur.com/EA7Q7iN.png) 0 0;
+  animation: walk 1s steps(6) infinite;
+}
+
+.mike-walk {
+  background:
+    url(https://i.imgur.com/VBFdiJA.png) 0 0;
+  animation: walk 1s steps(6) infinite;
+}
+
+.mike-idle {
+  background:
+    url(https://i.imgur.com/ePUJazx.png) 0 0;
+  animation: idle 2.5s steps(12) infinite;
+}
+
+.medium {
+  transform:scale(2.5);
+}
+
+.large {
+  transform:scale(3);
+}
+
+@keyframes walk {
+  from { background-position: 0px; }
+  to { background-position: -180px; }
+}
+
+@keyframes idle {
+  from { background-position: 0px; }
+  to { background-position: -360px; }
+}
+
+/** other stuff **/
+.scroll-container {
+  top:50px;
+  width:100%;
+}
+
+#rain-container {
+  position:absolute;
+  overflow:hidden;
+  z-index:999;
+}
+
+.rain-container {
+  display: none;
+  position:absolute;
+  overflow:hidden;
+  top:0;
+  left:0;
+  animation: make-it-rain .5s infinite;
+  z-index:10;
+}
+
+.rain-anim {
+  background:
+    url(https://i.imgur.com/DokZ3Uc.png) 0 0;
+  height:608px;
+  max-width:1920px;
+  opacity:.6;
+  filter:grayscale(.8);
+  transform:scale(2);
+  animation-name: make-it-rain; 
+  animation-duration: .5s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+}
+
+@keyframes make-it-rain {
+  from { background-position: 0px; }
+  to { background-position: -1028px; }
+}
+
+.bird-container {
+  display:none;
+  position:absolute;
+  top:50px;
+  z-index:5;
+  animation: bird-move 30s infinite;
+}
+
+.bird-anim {
+  background:
+    url(https://i.imgur.com/O0vPMxb.png) 0 0;
+  height:36px;
+  width:36px;
+  animation: bird-fly 1s infinite;
+}
+
+@keyframes bird-move {
+    0% {left: -20%;}
+    60% {left: -20%;}
+    100% {left: 120%;}
+}
+
+@keyframes bird-fly {
+  0%,12.5% {background-position: 0px;}
+  12.6%,25% {background-position: 36px;}
+  25.1%,37.5% {background-position: 72px;}
+  37.6%,50% {background-position: 108px;}
+  50.1%,62.5% {background-position: 144px;}
+  62.6%,75% {background-position: 180px;}
+  75.1%,87.5% {background-position: 216px;}
+  87.6%,100% {background-position: 252px;}
+}
+
+.effect {
+  display:none;
+}
+
+.fx-inspiration {
+  background:
+    url(https://i.imgur.com/UtImQts.png) 0 0;
+  height:20px;
+  width:20px;
+  opacity:.8;
+  margin-left:5px;
+  margin-top:-10px;
+  animation-name: insp-anim; 
+  animation-duration: 1s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+}
+
+@keyframes insp-anim {
+  from { background-position: 0px; }
+  to { background-position: -80px; }
+}
+
+.fx-poison {
+  background:
+    url(https://i.imgur.com/w7W8R2H.png) 0 0;
+  height:60px;
+  width:45px;
+  opacity:.8;
+  margin-left:-7px;
+  margin-top:-20px;
+  animation-name: poison-anim; 
+  animation-duration: 1.2s;
+  animation-timing-function: steps(6);
+  animation-iteration-count: infinite;
+}
+
+@keyframes poison-anim {
+  from { background-position: 0px; }
+  to { background-position: -270px; }
+}
+
+.fx-boost {
+  background:
+    url(https://i.imgur.com/jC4vXUC.png) 0 0;
+  height:40px;
+  width:80px;
+  opacity:.7;
+  margin-left:-23px;
+  margin-top:8px;
+  animation-name: boost-anim; 
+  animation-duration: .25s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+  transform:scale(.4);
+}
+
+@keyframes boost-anim {
+  from { background-position: 0px; }
+  to { background-position: -160px; }
+}
+
+/** portraits **/
+.portrait {
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border-color:white;
+  border-size:3px;
+}
+
+/** discord **/
+
+#discord-bot {
+  margin-top:1rem;
+}
+
+.discord-bot {
+  display:none;
+  transition: 1s;
+}
+
+/** smallest viewports **/
+@media (max-width: 575.98px) {
+  .sprite-container {
+    margin-top:32%;
+  }
+  
+  .medium {
+    transform:scale(1.5);
+  }  
+}
+
+/** small viewports **/
+@media (max-width: 767.98px) {
+  
+  .background {
+    height:120px;
+  }
+  
+  .ground {
+    top:60px;
+  }
+  
+  .foreground {
+    height:300px!important;
+  }
+  
+  @keyframes scroll {
+    0% { background-position: 0 0; }
+    100% { background-position: -4000px 0; }
+  }
+  
+  .medium {
+    transform:scale(1.4);  
+  }
+  
+  .large {
+    transform:scale(2);
+  }
+  
+  .cart {
+    top:10%;
+  }
+}
