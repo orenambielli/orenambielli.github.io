@@ -38,6 +38,7 @@ body {
   z-index: -999;
   animation: scroll-sky 250s infinite linear;
 }
+
 .sky-dawn {
   background:
     url(https://i.imgur.com/q01fan4.png)
@@ -223,10 +224,7 @@ body {
 }
 
 .anim-cart {
-  animation-name: anim-cart; 
-  animation-duration: 2s;
-  animation-timing-function: steps(5);
-  animation-iteration-count: infinite;
+  animation: anim-cart 2s steps(5) infinite;
 }
 
 @keyframes anim-cart {
@@ -256,10 +254,26 @@ body {
   animation: walk 1s steps(6) infinite;
 }
 
+.joel-prone {
+  background:
+    url(https://i.imgur.com/fOe8fIc.png) 0 0;
+}
+
 .mike-idle {
   background:
     url(https://i.imgur.com/CmIoAsH.png) 0 0;
   animation: idle 5s steps(6) infinite;
+}
+
+.mike-walk {
+  background:
+    url(https://i.imgur.com/YdVlcYR.png) 0 0;
+  animation: walk-right 1s steps(6) infinite;
+}
+
+.mike-prone {
+  background:
+    url(https://i.imgur.com/0vfnLO0.png) 0 0;
 }
 
 .avi-sit {
@@ -280,12 +294,6 @@ body {
 
 .large {
   transform: scale(3);
-}
-
-.mike-walk {
-  background:
-    url(https://i.imgur.com/YdVlcYR.png) 0 0;
-  animation: walk-right 1s steps(6) infinite;
 }
 
 @keyframes walk-left {
@@ -471,6 +479,10 @@ body {
 @keyframes boost-anim {
   from { background-position: 0px; }
   to { background-position: -160px; }
+}
+
+.no-scroll {
+  animation-play-state: paused;
 }
 
 /** portraits **/
