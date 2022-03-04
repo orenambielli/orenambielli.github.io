@@ -18,9 +18,12 @@ function toggleFX() {
   element.classList.toggle("effect");
 }
 
-function charactersIdle() {
-  var element = document.getElementById("sprite");
-  element.classList.toggle("effect");
+function idleEverything() {
+  var movingObjects = document.querySelectorAll("#background, #ground, #foreground")
+  var move_array = [...movingObjects];
+  for (const element of move_array) {
+    element.classList.toggle("no-scroll");
+  }
 }
 
 function toggleColetonProne() {
@@ -29,7 +32,27 @@ function toggleColetonProne() {
 }
 
 function toggleColetonInspiration() {
-  var element = document.getElementById("effect");
+  var element = document.getElementById("coleton");
+  element.classList.toggle("effect");
+}
+
+function toggleJoelProne() {
+  var element = document.getElementById("joel");
+  element.classList.toggle("joel-prone");
+}
+
+function toggleJoelInspiration() {
+  var element = document.getElementById("joel");
+  element.classList.toggle("effect");
+}
+
+function toggleMikeProne() {
+  var element = document.getElementById("mike");
+  element.classList.toggle("mike-prone");
+}
+
+function toggleMikeInspiration() {
+  var element = document.getElementById("mike");
   element.classList.toggle("effect");
 }
 
