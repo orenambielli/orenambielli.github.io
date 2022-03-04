@@ -27,6 +27,10 @@
   <div id="foreground"
        class="fg-woods scroll-fg"></div>
   
+  <div id="black-container" class="black-container">
+  <div class="fade-to-black"></div>
+  </div>
+  
   <div class="bird-container">
   <div class="bird-anim large"></div>
   </div>
@@ -36,19 +40,19 @@
   </div>
   
   <div class="col-3 sprite-container">
-  <div id="sprite"
+  <div id="coleton"
        class="coleton-walk large">
     <div id="effect" class="effect fx-inspiration"></div>
   </div>
   </div>
   <div class="col-3 sprite-container">
-  <div id="sprite"
+  <div id="joel"
        class="joel-walk large">
     <div id="effect" class="effect fx-poison"></div>
   </div>
   </div>
   <div class="col-1 sprite-container">
-  <div id="sprite"
+  <div id="mike"
        class="mike-walk large">
     <div id="effect" class="effect fx-boost"></div>
   </div>
@@ -76,7 +80,10 @@
   <button type="button" class="btn btn-primary btn-bs btn-lg" onclick="toggleDiscord()">
     <i class="bi bi-discord"></i>
   </button>
-  <button type="button" class="btn btn-secondary btn-bs btn-lg" onclick="toggleRain()">
+  <button type="button" class="btn btn-secondary btn-bs btn-lg" onclick="toggleBlack()">
+    <i class="bi bi-eye-slash-fill"></i>
+  </button>
+  <button type="button" class="btn btn-info btn-bs btn-lg" onclick="toggleRain()">
     <i class="bi bi-cloud-rain-fill"></i>
   </button>
   <button type="button" class="btn btn-success btn-bs btn-lg" onclick="changeToDesert()"><i class="bi bi-compass-fill"></i></button>
@@ -118,11 +125,19 @@
       <ul>
         <li>Class: Rogue</li>
         <li>Race: Human</li>
-        <li>Hit Points: __________</li>
-        <li>Armor Rating: __________</li>
+        <li>Hit Points: 15</li>
+        <li>Armor Rating: 13</li>
         <li>Skills: __________</li>
       </ul>
       </div>
+      </div>
+      <div class="btn-group btn-group-lg w-100 m-2" role="group">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+        </button>
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
+        <i class="bi bi-lightning-charge-fill"></i>
+        </button>
       </div>
     </div>
     
@@ -130,17 +145,25 @@
     <div class="row">
     <div class="col-6">
       <div class="portrait mike-walk large border m-4"></div>
-      <p class="pt-4 h3">Name TBD</p>
+      <p class="pt-4 h3">Barak</p>
       </div>
       <div class="col-6">
       <ul>
-        <li>Class: __________</li>
-        <li>Race: __________</li>
-        <li>Hit Points: __________</li>
-        <li>Armor Rating: __________</li>
+        <li>Class: Sorceror</li>
+        <li>Race: Fire Genasi</li>
+        <li>Hit Points: 26</li>
+        <li>Armor Rating: 14</li>
         <li>Skills: __________</li>
       </ul>
       </div>
+      </div>
+      <div class="btn-group btn-group-lg w-100 m-2" role="group">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+        </button>
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
+        <i class="bi bi-lightning-charge-fill"></i>
+        </button>
       </div>
     </div>
     
@@ -160,10 +183,12 @@
       </ul>
       </div>
       </div>
-      <div class="row button-row d-grid gap-2">
+      <div class="btn-group btn-group-lg w-100 m-2" role="group">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+        </button>
         <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
         <i class="bi bi-lightning-charge-fill"></i>
-          
         </button>
       </div>
     </div>
