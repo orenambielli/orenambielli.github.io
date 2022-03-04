@@ -218,20 +218,6 @@ body {
   display:none;
 }
 
-.cart-move {
-  background:
-    url(https://i.imgur.com/u6MQCVs.png) 0 0;
-}
-
-.anim-cart {
-  animation: anim-cart 2s steps(5) infinite;
-}
-
-@keyframes anim-cart {
-  from {background-position: 0px;}
-  to {background-position: 1300px;}
-}
-
 .rogue-idle {
   background:
     url(https://i.imgur.com/gskNWUe.png) 0 0;
