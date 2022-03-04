@@ -1,16 +1,16 @@
 body {
-  min-width:540px;
+  min-width: 540px;
   font-family: 'VT323', monospace;
-  background-color:#212529;
-  color:white;
-  overflow-x:hidden;
+  background-color: #212529;
+  color: white;
+  overflow-x: hidden;
 }
 
 .headline {
-  font-size:3rem;
-  text-align:center;
-  margin-top:-2rem;
-  z-index:999;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -2rem;
+  z-index: 999;
   animation: blink 2s infinite;
 }
 
@@ -23,8 +23,8 @@ body {
 
 /** menu stuff **/
 .menu {
-  padding:1rem;
-  z-index:999;
+  padding: 1rem;
+  z-index: 999;
 }
 
 .btn-bs {
@@ -35,7 +35,7 @@ body {
 /** sky stuff **/
 #sky {
   height: 150px;
-  z-index:-999;
+  z-index: -999;
   animation: scroll-sky 250s infinite linear;
 }
 .sky-dawn {
@@ -71,7 +71,7 @@ body {
     url(https://i.imgur.com/HqB1Vvw.png)
     repeat-x;
   background-size: auto 100%;
-  filter:grayscale(.8);
+  filter: grayscale(.8);
 }
 
 .sky-range {
@@ -82,15 +82,15 @@ body {
 }
 
 @keyframes scroll-sky {
-  0% { background-position: 0 0; }
-  100% { background-position: -1632px 0; }
+  0% {background-position: 0 0;}
+  100% {background-position: -1632px 0;}
 }
 
 #background {
-  top:0;
-  height:240px;
-  position:absolute;
-  z-index:1;
+  top: 0;
+  height: 240px;
+  position: absolute;
+  z-index: 1;
 }
 
 .bg-woods {
@@ -102,8 +102,7 @@ body {
 
 .bg-desert {
   background:
-    url(https://i.imgur.com/Ql84dPW.png)
-    repeat-x;
+    url(https://i.imgur.com/Ql84dPW.png) repeat-x;
   background-size: auto 100%;
 }
 
@@ -112,93 +111,106 @@ body {
 }
 
 @keyframes scroll-bg {
-  0% { background-position: 0 0; }
-  100% { background-position: -3836px 0; }
+  0% {background-position: 0 0;}
+  100% {background-position: -3836px 0;}
 }
 
 /** ground stuff **/
 #ground {
-  top:100px;
-  height:500px;
-  position:absolute;
+  top: 100px;
+  height: 512px;
+  position: absolute;
 }
 
 .ground-woods {
-  background:
-    url(https://i.imgur.com/bz7jmAb.png)
-    repeat-x;
-  background-size: auto 100%;
+  background: url(https://i.imgur.com/0qy10M9.png) repeat;
+  background-size: auto 50%;
+}
+
+.ground-grass {
+  background: url(https://i.imgur.com/aNoHif6.png) repeat;
+  background-size: auto 35%;
 }
 
 .ground-desert {
-  background:
-    url(https://i.imgur.com/bnZzSQ5.png)
-    repeat-x;
-  background-size: auto 100%;
+  background: url(https://i.imgur.com/JdiNkn9.png) repeat;
+  background-size: auto 50%;
 }
 
 .scroll-ground {
-  animation: scroll-ground 150s infinite linear;
+  animation: scroll-ground 100s infinite linear;
 }
 
 @keyframes scroll-ground {
-  0% { background-position: 0 0; }
-  100% { background-position: -3836px 0; }
+  0% {background-position: 0 0;}
+  100% {background-position: -2560px 0;}
 }
 
 /** foreground stuff**/
 #foreground {
   background-size: auto 100%;
-  bottom:0%;
-  height:450px;
-  position:absolute;
-  z-index:5;
+  bottom: 0%;
+  height: 450px;
+  position: absolute;
+  z-index: 5;
 }
 
 .fg-woods {
-  background:
-    url(https://i.imgur.com/FqDILQs.png)
-    repeat-x;
+  background: url(https://i.imgur.com/FqDILQs.png) repeat-x;
+  background-size: auto 100%;
+}
+
+.fg-forest {
+  background: url(https://i.imgur.com/ZePqtpC.png) repeat-x;
   background-size: auto 100%;
 }
 
 .fg-desert {
-  background:
-    url(https://i.imgur.com/ROfFzkH.png)
-    repeat-x;
+  background: url(https://i.imgur.com/ROfFzkH.png) repeat-x;
   background-size: auto 100%;
 }
 
 .scroll-fg {
-  animation: scroll-fg 150s infinite linear;
+  animation: scroll-fg 60s infinite linear;
 }
 
 @keyframes scroll-fg {
-  0% { background-position: 0 0; }
-  100% { background-position: -6000px 0; }
+  0% {background-position: 0 0;}
+  100% {background-position: -3000px 0;}
 }
 
 /** sprite stuff **/
 
 .sprite-container {
-  transform:scale(1.5);
-  z-index:3;
-  margin-top:30%;
+  transform: scale(1.5);
+  z-index: 3;
+  margin-top: 30%;
 }
 
-#sprite {
-  position:absolute;
-  width:30px;
-  height:36px;
-  z-index:3;
+#coleton {
+  position: absolute;
+  width: 30px;
+  height: 36px;
+}
+
+#joel {
+  position: absolute;
+  width: 30px;
+  height: 36px;
+}
+
+#mike {
+  position: absolute;
+  width: 30px;
+  height: 36px;
 }
 
 .cart {
-  position:absolute;
-  width:260px;
-  height:125px;
-  top:20%;
-  z-index:1;
+  position: absolute;
+  width: 260px;
+  height: 125px;
+  top: 20%;
+  z-index: 1;
 }
 
 .no-cart {
@@ -218,8 +230,8 @@ body {
 }
 
 @keyframes anim-cart {
-  from { background-position: 0px; }
-  to { background-position: 1300px; }
+  from {background-position: 0px;}
+  to {background-position: 1300px;}
 }
 
 .rogue-idle {
@@ -233,72 +245,128 @@ body {
   animation: walk 1s steps(6) infinite;
 }
 
+.coleton-prone {
+  background:
+    url(https://i.imgur.com/EW3gz1d.png) 0 0;
+}
+
 .joel-walk {
   background:
     url(https://i.imgur.com/EA7Q7iN.png) 0 0;
   animation: walk 1s steps(6) infinite;
 }
 
-.mike-walk {
-  background:
-    url(https://i.imgur.com/gIS1NqZ.png) 0 0;
-  animation: walk 1s steps(6) infinite;
-}
-
 .mike-idle {
   background:
-    url(https://i.imgur.com/ePUJazx.png) 0 0;
-  animation: idle 2.5s steps(12) infinite;
+    url(https://i.imgur.com/CmIoAsH.png) 0 0;
+  animation: idle 5s steps(6) infinite;
+}
+
+.avi-sit {
+  background:
+    url(https://i.imgur.com/a1oXIF2.png) 0 0;
+  animation: sit 10s steps(6) infinite;
+}
+
+@keyframes sit {
+  0%   { background-position-x: 0px; }
+  90%  { background-position-x: 0px; }
+  100% { background-position-x: -180px; }
 }
 
 .medium {
-  transform:scale(2.5);
+  transform: scale(2.5);
 }
 
 .large {
-  transform:scale(3);
+  transform: scale(3);
+}
+
+.mike-walk {
+  background:
+    url(https://i.imgur.com/YdVlcYR.png) 0 0;
+  animation: walk-right 1s steps(6) infinite;
+}
+
+@keyframes walk-left {
+  from {  background-position-y: 36px;
+          background-position-x: 0px; }
+  to {    background-position-y: 36px;
+          background-position-x: -180px; }
+}
+
+@keyframes walk-right {
+  from {background-position-x: 0px;}
+  to {background-position-x: -180px;}
 }
 
 @keyframes walk {
-  from { background-position: 0px; }
-  to { background-position: -180px; }
+  from {background-position: 0px;}
+  to {background-position: -180px;}
 }
 
 @keyframes idle {
-  from { background-position: 0px; }
-  to { background-position: -360px; }
+  0%   {background-position: 0px;}
+  100%  {background-position: -360px;}
 }
 
 /** other stuff **/
 .scroll-container {
-  top:50px;
-  width:100%;
+  top: 50px;
+  width: 100%;
+}
+
+#black-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.black-container {
+  background-color: black;
+  height: 608px;
+  max-width: 1920px;
+  overflow: hidden;
+  animation: fade-from-black 2s forwards;
+}
+
+@keyframes fade-from-black {
+  0%   {opacity:1;}
+  100% {opacity:0;}
+}
+
+.fade-to-black {
+  background-color: black;
+  height: 608px;
+  max-width: 1920px;
+  overflow: hidden;
+  animation: fade-to-black 2s forwards;
+}
+
+@keyframes fade-to-black {
+  0%   {opacity:0;}
+  100% {opacity:1;}
 }
 
 #rain-container {
-  position:absolute;
-  overflow:hidden;
-  z-index:999;
+  position: absolute;
+  overflow: hidden;
+  z-index: 999;
 }
 
 .rain-container {
   display: none;
-  position:absolute;
-  overflow:hidden;
-  top:0;
-  left:0;
-  animation: make-it-rain .5s infinite;
-  z-index:10;
 }
 
 .rain-anim {
   background:
     url(https://i.imgur.com/DokZ3Uc.png) 0 0;
-  height:608px;
-  max-width:1920px;
-  opacity:.6;
-  filter:grayscale(.8);
-  transform:scale(2);
+  height: 608px;
+  max-width: 1920px;
+  opacity: .6;
+  overflow: hidden;
+  filter: grayscale(.8);
+  transform: scale(2);
   animation-name: make-it-rain; 
   animation-duration: .5s;
   animation-timing-function: steps(4);
@@ -311,18 +379,18 @@ body {
 }
 
 .bird-container {
-  display:none;
-  position:absolute;
-  top:50px;
-  z-index:5;
+  display: none;
+  position: absolute;
+  top: 50px;
+  z-index: 5;
   animation: bird-move 30s infinite;
 }
 
 .bird-anim {
   background:
     url(https://i.imgur.com/O0vPMxb.png) 0 0;
-  height:36px;
-  width:36px;
+  height: 36px;
+  width: 36px;
   animation: bird-fly 1s infinite;
 }
 
@@ -344,17 +412,17 @@ body {
 }
 
 .effect {
-  display:none;
+  display: none;
 }
 
 .fx-inspiration {
   background:
     url(https://i.imgur.com/UtImQts.png) 0 0;
-  height:20px;
-  width:20px;
-  opacity:.8;
-  margin-left:5px;
-  margin-top:-10px;
+  height: 20px;
+  width: 20px;
+  opacity: .8;
+  margin-left: 5px;
+  margin-top: -10px;
   animation-name: insp-anim; 
   animation-duration: 1s;
   animation-timing-function: steps(4);
@@ -369,11 +437,11 @@ body {
 .fx-poison {
   background:
     url(https://i.imgur.com/w7W8R2H.png) 0 0;
-  height:60px;
-  width:45px;
-  opacity:.8;
-  margin-left:-7px;
-  margin-top:-20px;
+  height: 60px;
+  width: 45px;
+  opacity: .8;
+  margin-left: -7px;
+  margin-top: -20px;
   animation-name: poison-anim; 
   animation-duration: 1.2s;
   animation-timing-function: steps(6);
@@ -388,16 +456,16 @@ body {
 .fx-boost {
   background:
     url(https://i.imgur.com/jC4vXUC.png) 0 0;
-  height:40px;
-  width:80px;
-  opacity:.7;
-  margin-left:-23px;
-  margin-top:8px;
+  height: 40px;
+  width: 80px;
+  opacity: .7;
+  margin-left: -23px;
+  margin-top: 8px;
   animation-name: boost-anim; 
   animation-duration: .25s;
   animation-timing-function: steps(4);
   animation-iteration-count: infinite;
-  transform:scale(.4);
+  transform: scale(.4);
 }
 
 @keyframes boost-anim {
@@ -407,32 +475,33 @@ body {
 
 /** portraits **/
 .portrait {
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  border-color:white;
-  border-size:3px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-color: white;
+  border-size: 3px;
+  animation: none;
 }
 
 /** discord **/
 
 #discord-bot {
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 .discord-bot {
-  display:none;
+  display: none;
   transition: 1s;
 }
 
 /** smallest viewports **/
 @media (max-width: 575.98px) {
   .sprite-container {
-    margin-top:32%;
+    margin-top: 32%;
   }
   
   .medium {
-    transform:scale(1.5);
+    transform: scale(1.5);
   }  
 }
 
@@ -440,31 +509,31 @@ body {
 @media (max-width: 767.98px) {
   
   .background {
-    height:120px;
+    height: 120px;
   }
   
   .ground {
-    top:60px;
+    top: 60px;
   }
   
   .foreground {
-    height:300px!important;
+    height: 300px!important;
   }
   
   @keyframes scroll {
     0% { background-position: 0 0; }
-    100% { background-position: -4000px 0; }
+    100% { background-position: -2000px 0; }
   }
   
   .medium {
-    transform:scale(1.4);  
+    transform: scale(1.4);  
   }
   
   .large {
-    transform:scale(2);
+    transform: scale(2);
   }
   
   .cart {
-    top:10%;
+    top: 10%;
   }
 }
