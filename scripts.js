@@ -25,12 +25,11 @@ function idleEverything() {
     element.classList.toggle("no-scroll");
   }
   if ( document.getElementById("mike").classList.contains('mike-walk') )
-document.getElementById("mike").classList.toggle('mike-prone');
-  document.getElementById("joel").classList.contains('joel-walk')
-document.getElementById("joel").classList.toggle('joel-prone'); document.getElementById("coleton").classList.contains('coleton-walk')
-document.getElementById("coleton").classList.toggle('coleton-prone');
-document.getElementById("cart").classList.contains('cart')
-document.getElementById("cart").classList.toggle('no-cart');
+      document.getElementById("mike").classList.toggle('mike-prone');
+      document.getElementById("joel").classList.contains('joel-walk')
+      document.getElementById("joel").classList.toggle('joel-prone');
+      document.getElementById("coleton").classList.contains('coleton-walk')
+      document.getElementById("coleton").classList.toggle('coleton-prone');
 }
 
 function toggleColetonProne() {
