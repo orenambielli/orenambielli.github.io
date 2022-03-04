@@ -23,9 +23,9 @@
   <div id="background" 
        class="bg-woods scroll-bg"></div>
   <div id="ground"
-       class="ground-woods scroll-ground"></div>
+       class="ground-grass scroll-ground"></div>
   <div id="foreground"
-       class="fg-woods scroll-fg"></div>
+       class="fg-forest scroll-fg"></div>
   
   <div id="black-container" class="black-container">
   <div class="fade-to-black"></div>
@@ -62,8 +62,8 @@
   
 <div class="row justify-content-center g-0">
   <div class="col-6 col-md-2">
-  <div id="cart">
-    <img class="cart medium"src="https://i.imgur.com/GOLbhRm.gif">
+  <div>
+    <img id="cart" class="cart medium" src="https://i.imgur.com/GOLbhRm.gif">
     </div>
   </div>
   </div>
@@ -87,7 +87,7 @@
     <i class="bi bi-cloud-rain-fill"></i>
   </button>
   <button type="button" class="btn btn-success btn-bs btn-lg" onclick="changeToDesert()"><i class="bi bi-compass-fill"></i></button>
-  <button type="button" class="btn btn-danger btn-bs btn-lg" onclick="charactersIdle()"><i class="bi bi-hourglass-split"></i></button>
+  <button type="button" class="btn btn-danger btn-bs btn-lg" onclick="idleEverything()"><i class="bi bi-hourglass-split"></i></button>
   
 	<div class="btn-group m-2" role="group">
 		<button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDawn()"><i class="bi bi-sunrise-fill"></i></button>
@@ -132,10 +132,10 @@
       </div>
       </div>
       <div class="btn-group btn-group-lg w-100 m-2" role="group">
-        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleJoelProne()">
         <i class="bi bi-arrow-down-circle-fill"></i>
         </button>
-        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleJoelInspiration()">
         <i class="bi bi-lightning-charge-fill"></i>
         </button>
       </div>
@@ -158,10 +158,10 @@
       </div>
       </div>
       <div class="btn-group btn-group-lg w-100 m-2" role="group">
-        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleMikeProne()">
         <i class="bi bi-arrow-down-circle-fill"></i>
         </button>
-        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleMikeInspiration()">
         <i class="bi bi-lightning-charge-fill"></i>
         </button>
       </div>
