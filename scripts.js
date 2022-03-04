@@ -3,6 +3,11 @@ var element = document.getElementById("discord-bot");
   element.classList.toggle("discord-bot");
 }
 
+function toggleBlack(){
+var element = document.getElementById("black-container");
+  element.classList.toggle("fade-to-black");
+}
+
 function toggleRain(){
 var element = document.getElementById("rain-container");
   element.classList.toggle("rain-container");
@@ -16,6 +21,11 @@ function toggleFX() {
 function charactersIdle() {
   var element = document.getElementById("sprite");
   element.classList.toggle("effect");
+}
+
+function toggleColetonProne() {
+  var element = document.getElementById("coleton");
+  element.classList.toggle("coleton-prone");
 }
 
 function toggleColetonInspiration() {
