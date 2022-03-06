@@ -313,7 +313,19 @@ body {
 .werewolf-idle {
   background: url(https://i.imgur.com/odsj9Fo.png) 0 0;
   margin-left: 50%;
-  animation: enemy-idle 1s steps(4) infinite;
+  animation: enemy-4-idle 1s steps(4) infinite;
+}
+
+#cultist {
+  position: absolute;
+  width: 30px;
+  height: 36px;
+}
+
+.cultist-idle {
+  background: url(https://i.imgur.com/28p2Npo.png);
+  margin-left: 50%;
+  animation: enemy-idle 1s steps(6) infinite;
 }
 
 .hide-this {
@@ -321,6 +333,11 @@ body {
 }
 
 @keyframes enemy-idle {
+  from {background-position: 0px;}
+  to {background-position: -180px;}
+}
+
+@keyframes enemy-4-idle {
   from {background-position: 0px;}
   to {background-position: -200px;}
 }
