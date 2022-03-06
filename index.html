@@ -14,200 +14,202 @@
     </head>
 <body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>D&D Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom dashboard for our upcoming Dungeons and Dragons adventure."/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6a907e871b.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    </head>
+<body>
+
 <div class="container-fluid p-0">
-<div class="ratio ratio-16x9 mx-auto"
-     style="max-width:1080px; min-width:540px; overflow-y:hidden;">
-<div id="sky" class="sky-dusk"></div>
-  
-<div class="row justify-content-center g-0">
-  <div id="background" 
-       class="bg-woods scroll-bg"></div>
-  <div id="ground"
-       class="ground-woods scroll-ground"></div>
-  <div id="foreground"
-       class="fg-woods scroll-fg"></div>
-  
-  <div id="black-container" class="black-container">
-  <div class="fade-to-black"></div>
-  </div>
-  
-  <div class="bird-container">
-  <div class="bird-anim large"></div>
-  </div>
-  
-  <div id="rain-container" class="rain-container">
-  <div class="rain-anim"></div>
-  </div>
-  
-  <div class="col-3 sprite-container">
-  <div id="coleton"
-       class="coleton-walk large">
-    <div id="effect" class="effect fx-inspiration"></div>
-  </div>
-  </div>
-  <div class="col-3 sprite-container">
-  <div id="joel"
-       class="joel-walk large">
-    <div id="effect" class="effect fx-poison"></div>
-  </div>
-  </div>
-  <div class="col-1 sprite-container">
-  <div id="mike"
-       class="mike-walk large">
-    <div id="effect" class="effect fx-boost"></div>
-  </div>
-  </div>
-  <p class="headline">- Press Start -</p>
-</div>
-  
-<div class="row justify-content-center g-0">
-  <div class="col-6 col-md-2">
-  <div>
-    <img id="cart" class="cart medium" src="https://i.imgur.com/GOLbhRm.gif">
+  <div class="ratio ratio-16x9 mx-auto"
+      style="max-width:1080px; min-width:540px; overflow-y:hidden;">
+
+    <div id="sky" class="sky-dusk"></div>
+    <div class="row justify-content-center g-0">
+
+      <div id="background" class="bg-woods scroll-bg"></div>
+      <div id="ground" class="ground-woods scroll-ground"></div>
+      <div id="foreground" class="fg-woods scroll-fg"></div>
+
+      <div id="map-container" class="map">
+        <div id="map-forest" class="hide-this"></div>
+      </div>
+      
+      <div id="black-container" class="black-container">
+        <div class="fade-to-black"></div>
+      </div>
+      
+      <div id="rain-container" class="rain-container">
+        <div class="rain-anim"></div>
+      </div>
+
+      <div id="fog-container" class="fog-container">
+        <div class="fog-anim"></div>
+      </div>
+
+      <div id="house-container">
+        <div id="house" class="house no-house"></div>
+      </div>
+
+      <div class="col-2 sprite-container">
+        <div id="coleton" class="coleton-walk large">
+          <div id="effect" class="effect fx-inspiration"></div>
+        </div>
+      </div>
+
+      <div class="col-2 sprite-container">
+        <div id="joel" class="joel-walk large">
+          <div id="effect" class="effect fx-poison"></div>
+        </div>
+      </div>
+
+      <div class="col-2 sprite-container">
+        <div id="mike" class="mike-walk large">
+          <div id="effect" class="effect fx-boost"></div>
+        </div>
+      </div>
+
+      <div class="col-4 sprite-container">
+        <div id="avi" class="avi-sit no-avi large"></div>
+        <div id="werewolf" class="werewolf-idle large hide-this"></div>
+      </div>
+
+      <!--<p class="headline">- Press Start -</p>-->
+
+    </div>
+      
+    <div class="row justify-content-center g-0">
+      <div class="col-6 col-md-2">
+        <div id="cart">
+          <img class="cart medium" src="https://i.imgur.com/GOLbhRm.gif">
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  
-</div>
-</div>
 </div>
 
+<!-- Controls -->
 <div class="container">
-<div class="d-block container-gap"></div>  
+  <div class="d-block container-gap"></div>  
 
-<div class="menu">
-  <div class="d-block gap-2 d-block text-center">
-  <button type="button" class="btn btn-primary btn-bs btn-lg" onclick="toggleDiscord()">
-    <i class="bi bi-discord"></i>
-  </button>
-  <button type="button" class="btn btn-secondary btn-bs btn-lg" onclick="toggleBlack()">
-    <i class="bi bi-eye-slash-fill"></i>
-  </button>
-  <button type="button" class="btn btn-info btn-bs btn-lg" onclick="toggleRain()">
-    <i class="bi bi-cloud-rain-fill"></i>
-  </button>
-  <button type="button" class="btn btn-success btn-bs btn-lg" onclick="changeToDesert()"><i class="bi bi-compass-fill"></i></button>
-  <button type="button" class="btn btn-danger btn-bs btn-lg" onclick="idleEverything()"><i class="bi bi-hourglass-split"></i></button>
-  
-	<div class="btn-group m-2" role="group">
-		<button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDawn()"><i class="bi bi-sunrise-fill"></i></button>
-		<button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDay()"><i class="bi bi-brightness-high-fill"></i></button>
-		<button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDusk()"><i class="bi bi-sunset-fill"></i></button>
-		<button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeNight()"><i class="bi bi-moon-stars-fill"></i></button>
-	</div>
-  
+  <div class="menu">
+    <div class="d-block gap-2 d-block text-center">
+    <button type="button" class="btn btn-primary btn-bs btn-lg" onclick="toggleDiscord()"><i class="fa-brands fa-discord"></i></button>
+    <button type="button" class="btn btn-secondary btn-bs btn-lg" onclick="toggleBlack()"><i class="fa-solid fa-eye-low-vision"></i></button>
+    <button type="button" class="btn btn-info btn-bs btn-lg" onclick="toggleRain()"><i class="fa-solid fa-cloud-showers-heavy"></i></button>
+    <button type="button" class="btn btn-success btn-bs btn-lg" onclick="changeToDesert()"><i class="fa-solid fa-compass"></i></button>
+    <button type="button" class="btn btn-danger btn-bs btn-lg" onclick="idleEverything()"><i class="fa-solid fa-hourglass"></i></button>
+
+    <button type="button" class="btn btn-success btn-bs btn-lg" onclick="sceneToHouse()"><i class="fa-solid fa-house-chimney-crack"></i></button>
+    <button type="button" class="btn btn-danger btn-bs btn-lg" onclick="battleWerewolf()"> <i class="fa-solid fa-dice-d20"></i></button>
+    
+    <div class="btn-group m-2" role="group">
+      <button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDawn()"><i class="fa-solid fa-cloud-sun"></i></button>
+      <button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDay()"><i class="fa-solid fa-sun"></i></button>
+      <button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeDusk()"><i class="fa-solid fa-cloud-sun-rain"></i></button>
+      <button type="button" class="btn btn-warning btn-bs btn-lg" onclick="timeNight()"><i class="fa-solid fa-moon"></i></button>
+    </div>
+    
+    </div>
   </div>
-</div>
-  
-<div id="discord-bot" class="discord-bot">
-  <widgetbot server="946435872906162176"
-             channel="946435873422069782"
-             class="discord-bot"
-             width="100%"
-             height="500"></widgetbot>
-  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-</div>
-  
-<div class="container">
-  <p class="h4 text-center text-warning">A random band of adventurers have been hired by a fumbling wizard to escort him along 'Vel Eastwardly', a forested path that cuts through the woods.</p>  
-</div>
+    
+  <!--<div id="discord-bot" class="discord-bot">
+    <widgetbot server="946435872906162176"
+              channel="946435873422069782"
+              class="discord-bot"
+              width="100%"
+              height="500">
+    </widgetbot>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+</div>-->
 
+<!-- Player Stats -->
 <div class="container pb-4">  
   <div class="row justify-content-around g-4">
     
     <div class="col-md-5 bg-dark border border-light rounded pt-3">
-    <div class="row">
-    <div class="col-6">
-      <div class="portrait joel-walk large border m-4"></div>
-      <p class="pt-4 h3">Wendell Ogrestache</p>
-      </div>
-      <div class="col-6">
-      <ul>
-        <li>Class: Rogue</li>
-        <li>Race: Human</li>
-        <li>Hit Points: 15</li>
-        <li>Armor Rating: 13</li>
-        <li>Skills: __________</li>
-      </ul>
-      </div>
-      </div>
-      <div class="btn-group btn-group-lg w-100 m-2" role="group">
-        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleJoelProne()">
-        <i class="bi bi-arrow-down-circle-fill"></i>
-        </button>
-        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleJoelInspiration()">
-        <i class="bi bi-lightning-charge-fill"></i>
-        </button>
-      </div>
-    </div>
-    
-    <div class="col-md-5 bg-dark border border-light rounded pt-3">
-    <div class="row">
-    <div class="col-6">
-      <div class="portrait mike-walk large border m-4"></div>
-      <p class="pt-4 h3">Barak</p>
-      </div>
-      <div class="col-6">
-      <ul>
-        <li>Class: Sorceror</li>
-        <li>Race: Fire Genasi</li>
-        <li>Hit Points: 26</li>
-        <li>Armor Rating: 14</li>
-        <li>Skills: __________</li>
-      </ul>
-      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="portrait joel-walk large border m-4"></div>
+          <p class="pt-4 h3">Wendell Ogrestache</p>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li>Class: Rogue</li>
+            <li>Race: Human</li>
+            <li>Hit Points: 24</li>
+            <li>Armor Rating: 13</li>
+            <li>Skills: __________</li>
+          </ul>
+        </div>
       </div>
       <div class="btn-group btn-group-lg w-100 m-2" role="group">
-        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleMikeProne()">
-        <i class="bi bi-arrow-down-circle-fill"></i>
-        </button>
-        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleMikeInspiration()">
-        <i class="bi bi-lightning-charge-fill"></i>
-        </button>
-      </div>
-    </div>
-    
-    <div class="col-md-5 bg-dark border border-light rounded pt-3">
-    <div class="row">
-    <div class="col-6">
-      <div class="portrait coleton-walk large border m-4"></div>
-      <p class="pt-4 h3">Name TBD</p>
-      </div>
-      <div class="col-6">
-      <ul>
-        <li>Class: Cleric</li>
-        <li>Race: __________</li>
-        <li>Hit Points: __________</li>
-        <li>Armor Rating: __________</li>
-        <li>Skills: __________</li>
-      </ul>
-      </div>
-      </div>
-      <div class="btn-group btn-group-lg w-100 m-2" role="group">
-        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()">
-        <i class="bi bi-arrow-down-circle-fill"></i>
-        </button>
-        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()">
-        <i class="bi bi-lightning-charge-fill"></i>
-        </button>
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleJoelProne()"><i class="fa-solid fa-skull"></i></button>
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleJoelInspiration()"><i class="fa-solid fa-bolt"></i></button>
       </div>
     </div>
     
     <div class="col-md-5 bg-dark border border-light rounded pt-3">
       <div class="row">
-      <div class="col-6">
-        <div class="portrait rogue-idle large border m-4"></div>
-        <p class="pt-4 h3">Dungeon Master</p>
+        <div class="col-6">
+          <div class="portrait mike-walk large border m-4"></div>
+          <p class="pt-4 h3">Barak</p>
         </div>
         <div class="col-6">
-        Some information goes here
-        </div>
+          <ul>
+            <li>Class: Sorceror</li>
+            <li>Race: Fire Genasi</li>
+            <li>Hit Points: 26</li>
+            <li>Armor Rating: 14</li>
+            <li>Skills: __________</li>
+          </ul>
         </div>
       </div>
+      <div class="btn-group btn-group-lg w-100 m-2" role="group">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleMikeProne()"><i class="fa-solid fa-skull"></i></button>
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleMikeInspiration()"><i class="fa-solid fa-bolt"></i></button>
+      </div>
+    </div>
+    
+    <div class="col-md-5 bg-dark border border-light rounded pt-3">
+      <div class="row">
+        <div class="col-6">
+          <div class="portrait coleton-walk large border m-4"></div>
+          <p class="pt-4 h3">Name TBD</p>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li>Class: Cleric</li>
+            <li>Race: __________</li>
+            <li>Hit Points: __________</li>
+            <li>Armor Rating: __________</li>
+            <li>Skills: __________</li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-group btn-group-lg w-100 m-2" role="group">
+        <button type="button" class="btn btn-danger statusFXButton" onclick="toggleColetonProne()"><i class="fa-solid fa-skull"></i></button>
+        <button type="button" class="btn btn-warning statusFXButton" onclick="toggleColetonInspiration()"><i class="fa-solid fa-bolt"></i></button>
+      </div>
+    </div>
 
   </div>
 </div>
 </div>
+
+</body>
+</html>
+
 
     
 </body>
