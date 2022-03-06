@@ -96,12 +96,15 @@ function toggleDiscord(){
   
   function battleWerewolf() {
     idleEverything();
-    clearLandscape();
     toggleBattleFog();
+    document.getElementById("background").classList.toggle('hide-this');
+    document.getElementById("ground").classList.toggle('hide-this');
+    document.getElementById("foreground").classList.toggle('hide-this');
     document.getElementById("cart").classList.toggle('hide-this');
     document.getElementById("map-forest").classList.toggle('hide-this');
     document.getElementById("werewolf").classList.toggle('hide-this');
     document.getElementById("avi").classList.toggle('no-avi');
+    document.getElementById("sky").classList.toggle('sky-night');
   }
   
   function timeDawn() {
