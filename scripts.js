@@ -106,6 +106,18 @@ function toggleDiscord(){
     document.getElementById("avi").classList.toggle('no-avi');
     document.getElementById("sky").classList.toggle('sky-night');
   }
+
+  function battleCultist() {
+    idleEverything();
+    document.getElementById("background").classList.toggle('hide-this');
+    document.getElementById("ground").classList.toggle('hide-this');
+    document.getElementById("foreground").classList.toggle('hide-this');
+    document.getElementById("warp-container").classList.toggle('hide-this');
+    document.getElementById("cart").classList.toggle('hide-this');
+    document.getElementById("map-meadow").classList.toggle('hide-this');
+    document.getElementById("bbeg").classList.toggle('hide-this');
+    document.getElementById("sky").classList.toggle('sky-dusk');
+  }
   
   function timeDawn() {
     var element = document.getElementById("sky");
