@@ -1,7 +1,9 @@
 body {
   min-width: 540px;
   font-family: 'VT323', monospace;
-  background-color: #212529;
+
+  background-color: #141C15;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   color: white;
   overflow-x: hidden;
 }
@@ -186,6 +188,21 @@ body {
   height: 100%;
 }
 
+#map-cave-entrance {
+  background: url(https://i.imgur.com/eHjG863.png);
+  height: 100%;
+}
+
+#map-cave {
+  background: url(https://i.imgur.com/C6laMJ3.png);
+  height: 100%;
+}
+
+#map-camp {
+  background: url(https://i.imgur.com/lBNsBT1.png);
+  height: 100%;
+}
+
 
 
 /************************************************** sprite stuff **/
@@ -199,6 +216,11 @@ body {
   position: absolute;
   width: 30px;
   height: 36px;
+}
+
+#coleton-fx {
+  position: absolute;
+  margin-top: -10px;
 }
 
 .coleton-walk {
@@ -221,6 +243,11 @@ body {
   height: 36px;
 }
 
+#joel-fx {
+  position: absolute;
+  margin-top: -10px;
+}
+
 .joel-walk {
   background: url(https://i.imgur.com/EA7Q7iN.png) 0 0;
   animation: walk 1s steps(6) infinite;
@@ -239,6 +266,11 @@ body {
   position: absolute;
   width: 30px;
   height: 36px;
+}
+
+#mike-fx {
+  position: absolute;
+  margin-top: -10px;
 }
 
 .mike-walk {
@@ -309,6 +341,19 @@ body {
 }
 
 /************************************************** enemies **/
+#giant-spider {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.giant-spider {
+  background: url(https://i.imgur.com/j3YkKcD.png) 0 0;
+  margin-top: -20%;
+  margin-left: 50%;
+  animation: enemy-5-idle 1s steps(5) infinite;
+}
+
 #werewolf {
   position: absolute;
   width: 50px;
@@ -345,23 +390,28 @@ body {
   animation: bbeg-idle 1s steps(6) infinite;
 }
 
-.hide-this {
+.hide {
   display:none;
 }
 
 @keyframes bbeg-idle {
-  from {background-position: 0px;}
-  to {background-position: -360px;}
+  from { background-position: 0px; }
+  to { background-position: -360px; }
 }
 
 @keyframes enemy-idle {
-  from {background-position: 0px;}
-  to {background-position: -180px;}
+  from { background-position: 0px; }
+  to { background-position: -180px; }
 }
 
 @keyframes enemy-4-idle {
-  from {background-position: 0px;}
-  to {background-position: -200px;}
+  from { background-position: 0px; }
+  to { background-position: -200px; }
+}
+
+@keyframes enemy-5-idle {
+  from { background-position: 0px; }
+  to { background-position: -500px; }
 }
 
 /************************************************** objects **/
@@ -373,8 +423,26 @@ body {
   z-index: 1;
 }
 
-.no-cart {
+#campfire {
+  position:absolute;
+  height: 50px;
+  width: 40px;
+  margin-left: 45%;
+}
+
+.campfire {
+  background: url(https://i.imgur.com/aooTWYt.png);
+  margin-left: 50%;
+  animation: campfire 1s steps(4) infinite;
+}
+
+.hide {
   display:none;
+}
+
+@keyframes campfire {
+  from {background-position: 0px;}
+  to {background-position: -160px;}
 }
 
 #house-container {
@@ -428,22 +496,27 @@ body {
   height: 608px;
   max-width: 1920px;
   overflow: hidden;
-  animation: fade-to-black 2s forwards;
+  animation: fade 2s forwards;
 }
 
-@keyframes fade-to-black {
+.fade {
+  animation: fade 2s forwards;
+}
+
+@keyframes fade {
   0%   {opacity:0;}
   100% {opacity:1;}
+}
+
+@keyframes fade-back {
+  0%   {opacity:1;}
+  100% {opacity:0;}
 }
 
 #rain-container {
   position: absolute;
   overflow: hidden;
   z-index: 999;
-}
-
-.rain-container {
-  display: none;
 }
 
 .rain-anim {
@@ -465,14 +538,29 @@ body {
   to { background-position: -1028px; }
 }
 
+.rain-start {
+  animation: fade 10s forwards;
+}
+
+.rain-end {
+  animation: fade-back 10s forwards;
+}
+
+.kill-enemy {
+  animation: kill-enemy 10s forwards;
+}
+
+@keyframes kill-enemy {
+  0%   { opacity:1; filter: hue-rotate(0deg); }
+  25%  { opacity:.75; filter: hue-rotate(500deg); }
+  50%  { opacity:.5; filter: hue-rotate(-500deg); }
+  100% { opacity:0; filter: hue-rotate(1000deg); }
+}
+
 #fog-container {
   position: absolute;
   overflow: hidden;
   z-index: 999;
-}
-
-.fog-container {
-  display: none;
 }
 
 .fog-anim {
@@ -511,6 +599,75 @@ body {
   100% { background-position-x: -3200px; background-position-y: -3200px; opacity: 10%; }
 }
 
+#mist-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.mist-anim {
+  background: url(https://i.imgur.com/Ifo1hxk.png) 0 0;
+  background-size: cover;
+  height: 608px;
+  opacity: .2;
+  overflow: hidden;
+  animation: make-it-mist 25s infinite linear;
+}
+
+@keyframes make-it-mist {
+  0% { background-position: 0px; }
+  100% { background-position: -4828px; }
+}
+
+#dark-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dark-anim {
+  background-color: black;
+  height: 800px;
+  max-width: 1920px;
+  opacity: .5;
+  overflow: hidden;
+  animation: make-it-dark 2s infinite linear;
+}
+
+@keyframes make-it-dark {
+  0% { opacity: 10%; }
+  30% { opacity: 20%; }
+  40% { opacity: 30%; }
+  50% { opacity: 20%; }
+  70% { opacity: 30%; }
+  80% { opacity: 10%; }
+  100% { opacity: 20%; }
+}
+
+#hurt-container {
+  position: absolute;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.hurt-flash {
+  background-color: darkred;
+  height: 800px;
+  max-width: 1920px;
+  opacity: .5;
+  overflow: hidden;
+  animation: make-it-hurt .5s forwards;
+}
+
+@keyframes make-it-hurt {
+  0% { opacity: 0%; }
+  30% { opacity: 80%; }
+  40% { opacity: 30%; }
+  50% { opacity: 0%; }
+  60% { opacity: 80%; }
+  100% { opacity: 0%; }
+}
+
 /************************************************** sprite stuff **/
 .effect {
   display: none;
@@ -520,9 +677,10 @@ body {
   background: url(https://i.imgur.com/UtImQts.png) 0 0;
   height: 20px;
   width: 20px;
-  opacity: .8;
+  opacity: .6;
   margin-left: 5px;
-  margin-top: -10px;
+  margin-top: 25px!important;
+  z-index: 2;
   animation-name: insp-anim; 
   animation-duration: 1s;
   animation-timing-function: steps(4);
@@ -532,6 +690,13 @@ body {
 @keyframes insp-anim {
   from { background-position: 0px; }
   to { background-position: -80px; }
+}
+
+.fx-fire {
+  background: url(https://i.imgur.com/Sa49hL2.png) 0 0;
+  height: 36px;
+  width: 30px;
+  animation: walk 1s steps(6) infinite;
 }
 
 .fx-poison {
