@@ -1,145 +1,141 @@
 function toggleDiscord(){
-  var element = document.getElementById("discord-bot");
-    element.classList.toggle("discord-bot");
-  }
+  document.getElementById("discord-bot").classList.toggle('hide');
+}
   
-  function toggleBlack(){
-  var element = document.getElementById("black-container");
-    element.classList.toggle("fade-to-black");
-  }
-  
-  function toggleRain(){
-  var element = document.getElementById("rain-container");
-    element.classList.toggle("rain-container");
-  }
+function toggleBlack(){
+  document.getElementById("black-container").classList.toggle('fade-to-black');
+}
 
-  function toggleBattleFog(){
-    var element = document.getElementById("fog-container");
-      element.classList.toggle("fog-container");
-    }
-  
-  function toggleFX() {
-    var element = document.getElementById("effect");
-    element.classList.toggle("effect");
-  }
-  
-  function idleEverything() {
-    var movingObjects = document.querySelectorAll("#background, #ground, #foreground")
-    var move_array = [...movingObjects];
-    for (const element of move_array) {
-      element.classList.toggle("no-scroll");
-    }
-    if ( document.getElementById("mike").classList.contains('mike-walk') )
-        document.getElementById("mike").classList.toggle('mike-idle');
-        document.getElementById("joel").classList.contains('joel-walk')
-        document.getElementById("joel").classList.toggle('joel-idle');
-        document.getElementById("coleton").classList.contains('coleton-walk')
-        document.getElementById("coleton").classList.toggle('coleton-idle');
-  }
-  
-  function toggleColetonProne() {
-    var element = document.getElementById("coleton");
-    element.classList.toggle("coleton-prone");
-  }
-  
-  function toggleColetonInspiration() {
-    var element = document.getElementById("coleton");
-    element.classList.toggle("effect");
-  }
-  
-  function toggleJoelProne() {
-    var element = document.getElementById("joel");
-    element.classList.toggle("joel-prone");
-  }
-  
-  function toggleJoelInspiration() {
-    var element = document.getElementById("joel");
-    element.classList.toggle("effect");
-  }
-  
-  function toggleMikeProne() {
-    var element = document.getElementById("mike");
-    element.classList.toggle("mike-prone");
-  }
-  
-  function toggleMikeInspiration() {
-    var element = document.getElementById("mike");
-    element.classList.toggle("effect");
-  }
-  
-  function changeToDesert() {
-    if ( document.getElementById("background").classList.contains('bg-woods') )
-  document.getElementById("background").classList.toggle('bg-desert');
-  document.getElementById("ground").classList.toggle('ground-desert'); 
-  document.getElementById("foreground").classList.toggle('fg-desert');
-  document.getElementById("cart").classList.toggle('no-cart');
-  }
+function thatHurt(){
+  document.getElementById("hurt-container").classList.toggle('hide');
+}
 
-  function clearLandscape() {
-    var bgClear = document.getElementById("background");
-    var gClear = document.getElementById("ground");
-    var fgClear = document.getElementById("foreground");
-    bgClear.removeAttribute('class');
-    gClear.removeAttribute('class');
-    fgClear.removeAttribute('class');
-  }
+function killNPCS() {
+  document.getElementById("npc-col").classList.toggle('kill-enemy');
+}
   
-  function sceneToHouse() {
-    idleEverything();
-    if ( document.getElementById("background").classList.contains('bg-woods') )
+function toggleRain(){
+  var e = document.getElementById("rain-container");
+    if ( document.getElementById("rain-container").classList.contains('hide') ) {
+      e.classList.toggle('hide')
+      e.classList.toggle('rain-start');
+    }
+    else {
+      e.classList.toggle('rain-end');
+    }
+}
+
+function toggleBattleFog(){
+  document.getElementById("fog-container").classList.toggle('hide');
+}
+
+function toggleIdle() {
+  document.getElementById("mike").classList.toggle('mike-idle');
+  document.getElementById("joel").classList.toggle('joel-idle');
+  document.getElementById("coleton").classList.toggle('coleton-idle');
+}
+  
+function idleEverything() {
+  toggleIdle();
+  var movingObjects = document.querySelectorAll("#background, #ground, #foreground")
+  var move_array = [...movingObjects];
+  for (const element of move_array) {
+    element.classList.toggle("no-scroll");
+  }
+}
+
+function toggleColetonInspiration() { document.getElementById("coleton-fx").classList.toggle('fx-inspiration'); }
+function toggleColetonProne() { document.getElementById("coleton").classList.toggle('coleton-prone'); }
+
+function toggleJoelInspiration() { document.getElementById("joel-fx").classList.toggle('fx-inspiration'); }
+function toggleJoelProne() { document.getElementById("joel").classList.toggle('joel-prone'); }
+
+function toggleMikeFire() { document.getElementById("mike-fx").classList.toggle('fx-fire'); }
+function toggleMikeInspiration() { document.getElementById("mike-fx").classList.toggle('fx-inspiration'); }
+function toggleMikeProne() { document.getElementById("mike").classList.toggle('mike-prone'); }
+
+function clearLandscape() {
+  document.getElementById("background").classList.toggle('hide');
+  document.getElementById("ground").classList.toggle('hide');
+  document.getElementById("foreground").classList.toggle('hide');
+}
+
+function setHouse() {
+  idleEverything();
   document.getElementById("ground").classList.toggle('ground-grass'); 
   document.getElementById("foreground").classList.toggle('fg-forest');
-  document.getElementById("cart").classList.toggle('no-cart');
-  document.getElementById("house").classList.toggle('no-house');
-  document.getElementById("avi").classList.toggle('no-avi');
-  }
-  
-  function battleWerewolf() {
-    idleEverything();
-    toggleBattleFog();
-    document.getElementById("background").classList.toggle('hide-this');
-    document.getElementById("ground").classList.toggle('hide-this');
-    document.getElementById("foreground").classList.toggle('hide-this');
-    document.getElementById("cart").classList.toggle('hide-this');
-    document.getElementById("map-forest").classList.toggle('hide-this');
-    document.getElementById("werewolf").classList.toggle('hide-this');
-    document.getElementById("avi").classList.toggle('no-avi');
-    document.getElementById("sky").classList.toggle('sky-night');
-  }
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("house").classList.toggle('hide');
+}
 
-  function battleCultist() {
-    idleEverything();
-    document.getElementById("background").classList.toggle('hide-this');
-    document.getElementById("ground").classList.toggle('hide-this');
-    document.getElementById("foreground").classList.toggle('hide-this');
-    document.getElementById("warp-container").classList.toggle('hide-this');
-    document.getElementById("cart").classList.toggle('hide-this');
-    document.getElementById("map-meadow").classList.toggle('hide-this');
-    document.getElementById("bbeg").classList.toggle('hide-this');
-    document.getElementById("sky").classList.toggle('sky-dusk');
-  }
-  
-  function timeDawn() {
-    var element = document.getElementById("sky");
-    element.removeAttribute('class');
-    element.classList.toggle("sky-dawn");
-  }
-  
-  function timeDay() {
-    var element = document.getElementById("sky");
-    element.removeAttribute('class');
-    element.classList.toggle("sky-blue");
-  }
-  
-  function timeDusk() {
-    var element = document.getElementById("sky");
-    element.removeAttribute('class');
-    element.classList.toggle("sky-dusk");
-  }
-  
-  function timeNight() {
-    var element = document.getElementById("sky");
-    element.removeAttribute('class');
-    element.classList.toggle("sky-night");
-  }
-  
+function sceneToCaveEntrance() {
+  idleEverything();
+  clearLandscape();
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("map-cave-entrance").classList.toggle('hide');
+}
+
+function battleWerewolf() {
+  idleEverything();
+  toggleBattleFog();
+  clearLandscape();
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("map-forest").classList.toggle('hide');
+  document.getElementById("werewolf").classList.toggle('hide');
+  document.getElementById("avi").classList.toggle('hide');
+  document.getElementById("sky").classList.toggle('sky-night');
+}
+
+function battleCave() {
+  idleEverything();
+  clearLandscape();
+  document.getElementById("mist-container").classList.toggle('hide');
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("map-cave").classList.toggle('hide');
+  document.getElementById("giant-spider").classList.toggle('hide');
+}
+
+function sceneToCampfire() {
+  clearLandscape();
+  document.getElementById("coleton").classList.toggle('hide');
+  document.getElementById("joel").classList.toggle('hide');
+  document.getElementById("mike").classList.toggle('hide');
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("dark-container").classList.toggle('hide');
+  document.getElementById("map-camp").classList.toggle('hide');
+  document.getElementById("campfire").classList.toggle('hide');
+}
+
+function battleCultist() {
+  idleEverything();
+  clearLandscape();
+  document.getElementById("warp-container").classList.toggle('hide');
+  document.getElementById("cart").classList.toggle('hide');
+  document.getElementById("map-meadow").classList.toggle('hide');
+  document.getElementById("bbeg").classList.toggle('hide');
+  document.getElementById("sky").classList.toggle('sky-dusk');
+}
+
+function emptySky() {
+  document.getElementById("sky").removeAttribute('class');
+}
+
+function timeDawn() {
+  emptySky();
+  document.getElementById("sky").classList.add('sky-dawn');
+}
+
+function timeDay() {
+  emptySky();
+  document.getElementById("sky").classList.toggle('sky-blue');
+}
+
+function timeDusk() {
+  emptySky();
+  document.getElementById("sky").classList.toggle('sky-dusk');
+}
+
+function timeNight() {
+  emptySky();
+  document.getElementById("sky").classList.toggle('sky-night');
+}
