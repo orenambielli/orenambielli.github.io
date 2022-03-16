@@ -1,11 +1,19 @@
 body {
   min-width: 540px;
   font-family: 'VT323', monospace;
-
   background-color: #141C15;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   color: white;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: gold;
+}
+
+a:hover {
+  color: white;
 }
 
 .headline {
@@ -49,6 +57,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .sky-blue {
   background: url(https://i.imgur.com/ziTV2mM.png) repeat-x;
   background-size: auto 100%;
+  animation: fade-from-black 2s forwards;
 }
 
 .sky-dusk {
@@ -341,6 +350,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 /************************************************** enemies **/
+#tiny-spider {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: .8;
+}
+
+.tiny-spider {
+  background: url(https://i.imgur.com/5cdnS3k.png);
+  margin-top: -20%;
+  margin-left: -44%;
+  animation: enemy-sm-idle 1s steps(5) infinite;
+}
+
 #giant-spider {
   position: absolute;
   width: 100px;
@@ -402,6 +425,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 @keyframes enemy-idle {
   from { background-position: 0px; }
   to { background-position: -180px; }
+}
+
+@keyframes enemy-sm-idle {
+  from { background-position: 0px; }
+  to { background-position: -250px; }
 }
 
 @keyframes enemy-4-idle {
@@ -692,6 +720,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   to { background-position: -80px; }
 }
 
+.fx-grapple {
+  background: url(https://i.imgur.com/kCV6XVY.png);
+  filter: grayscale(.75);
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+  margin-top: 25px!important;
+  z-index: 2;
+  animation-name: insp-anim; 
+  animation-duration: 1s;
+  animation-timing-function: steps(4);
+  animation-iteration-count: infinite;
+}
+
 .fx-fire {
   background: url(https://i.imgur.com/Sa49hL2.png) 0 0;
   height: 36px;
@@ -746,7 +788,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   height: 35px;
   border-radius: 50%;
   border-color: white;
-  border-size: 3px;
+  border-width: 3px;
   animation: none;
 }
 
