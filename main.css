@@ -176,49 +176,41 @@ a:hover {
   100% {background-position: -3000px 0;}
 }
 
+/************************************************** map stuff**/
+
 #map-container {
   position: absolute;
   overflow:hidden;
-}
-
-.map {
   height: 608px;
   max-width: 1920px;
-  overflow: hidden;
 }
 
-#map-forest {
-  background: url(https://i.imgur.com/YyXl9dR.png);
-  height: 100%;
-}
-
-#map-meadow {
-  background: url(https://i.imgur.com/GKwcmqd.png);
-  height: 100%;
-}
-
-#map-cave-entrance {
-  background: url(https://i.imgur.com/eHjG863.png);
-  height: 100%;
-}
-
-#map-cave {
-  background: url(https://i.imgur.com/C6laMJ3.png);
-  height: 100%;
-}
-
-#map-camp {
+.map-camp {
   background: url(https://i.imgur.com/lBNsBT1.png);
-  height: 100%;
 }
 
+.map-cave-entrance {
+  background: url(https://i.imgur.com/eHjG863.png);
+}
 
+.map-cave {
+  background: url(https://i.imgur.com/C6laMJ3.png);
+}
+
+.map-forest {
+  background: url(https://i.imgur.com/YyXl9dR.png);
+}
+
+.map-meadow {
+  background: url(https://i.imgur.com/GKwcmqd.png);
+}
 
 /************************************************** sprite stuff **/
 .sprite-container {
+  margin-top: 15%;
+  padding-left: 5%;
   transform: scale(1.5);
   z-index: 3;
-  margin-top: 33%;
 }
 
 #coleton {
@@ -350,43 +342,32 @@ a:hover {
 }
 
 /************************************************** enemies **/
-#tiny-spider {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  opacity: .8;
-}
-
-.tiny-spider {
-  background: url(https://i.imgur.com/5cdnS3k.png);
-  margin-top: -20%;
-  margin-left: -44%;
-  animation: enemy-sm-idle 1s steps(5) infinite;
-}
-
-#giant-spider {
+#md-enemy {
   position: absolute;
   width: 100px;
   height: 100px;
+  margin-left: 30%;
+  margin-top: -30%;
 }
 
 .giant-spider {
-  background: url(https://i.imgur.com/j3YkKcD.png) 0 0;
-  margin-top: -20%;
-  margin-left: 50%;
-  animation: enemy-5-idle 1s steps(5) infinite;
+  background: url(https://i.imgur.com/9VjpDuN.png) 0 0;
+  animation: enemy-md-idle 1s steps(6) infinite;
 }
 
-#werewolf {
-  position: absolute;
-  width: 50px;
-  height: 60px;
+.werewolf {
+  background: url(https://i.imgur.com/1XpCHbi.png) 0 0;
+  animation: enemy-md-idle 1s steps(6) infinite;
 }
 
-.werewolf-idle {
-  background: url(https://i.imgur.com/odsj9Fo.png) 0 0;
-  margin-left: 50%;
-  animation: enemy-4-idle 1s steps(4) infinite;
+.bbeg {
+  background: url(https://i.imgur.com/aqzG3RK.png);
+  animation: enemy-md-idle 1s steps(6) infinite;
+}
+
+@keyframes enemy-md-idle {
+  from { background-position: 0px; }
+  to { background-position: -600px; }
 }
 
 #cultist {
@@ -401,25 +382,22 @@ a:hover {
   animation: enemy-idle 1s steps(6) infinite;
 }
 
-#bbeg {
+#tiny-spider {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  opacity: .8;
 }
 
-.bbeg-idle {
-  background: url(https://i.imgur.com/ZBYsPmo.png);
-  margin-left: 50%;
-  animation: bbeg-idle 1s steps(6) infinite;
+.tiny-spider {
+  background: url(https://i.imgur.com/5cdnS3k.png);
+  margin-top: -20%;
+  margin-left: -44%;
+  animation: enemy-sm-idle 1s steps(5) infinite;
 }
 
 .hide {
   display:none;
-}
-
-@keyframes bbeg-idle {
-  from { background-position: 0px; }
-  to { background-position: -360px; }
 }
 
 @keyframes enemy-idle {
@@ -432,23 +410,57 @@ a:hover {
   to { background-position: -250px; }
 }
 
-@keyframes enemy-4-idle {
-  from { background-position: 0px; }
-  to { background-position: -200px; }
-}
-
-@keyframes enemy-5-idle {
-  from { background-position: 0px; }
-  to { background-position: -500px; }
-}
-
 /************************************************** objects **/
-.cart {
+#cart {
   position: absolute;
   width: 260px;
   height: 125px;
-  top: 20%;
+  margin-top: 10%;
+  margin-left: 25%;
   z-index: 1;
+}
+
+.cart-idle {
+  background: url(https://i.imgur.com/onkFFfy.png);
+  transform: scale(2);
+}
+
+.cart-anim {
+  background: url(https://i.imgur.com/onkFFfy.png);
+  transform: scale(2);
+  animation: cart-move 1s steps(5) infinite;
+}
+
+@keyframes cart-move {
+  from { background-position: 0px; }
+  to { background-position: -1300px; }
+}
+
+#wheel-sm {
+  position: absolute;
+  height: 66px;
+  width: 66px;
+  margin-left: 34%;
+  margin-top: 22.7%;
+  z-index: 2;
+}
+
+#wheel-lg {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin-left: 16.6%;
+  margin-top: 19.7%;
+  z-index: 2;
+}
+
+.spin-slow {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
 }
 
 #campfire {
@@ -464,13 +476,9 @@ a:hover {
   animation: campfire 1s steps(4) infinite;
 }
 
-.hide {
-  display:none;
-}
-
 @keyframes campfire {
-  from {background-position: 0px;}
-  to {background-position: -160px;}
+  from { background-position: 0px; }
+  to { background-position: -160px; }
 }
 
 #house-container {
@@ -527,6 +535,14 @@ a:hover {
   animation: fade 2s forwards;
 }
 
+.fade-to-night {
+  background-color: black;
+  height: 608px;
+  max-width: 1920px;
+  overflow: hidden;
+  animation: fade-to-night 2s forwards;
+}
+
 .fade {
   animation: fade 2s forwards;
 }
@@ -541,7 +557,7 @@ a:hover {
   100% {opacity:0;}
 }
 
-#rain-container {
+#overlay {
   position: absolute;
   overflow: hidden;
   z-index: 999;
@@ -585,12 +601,6 @@ a:hover {
   100% { opacity:0; filter: hue-rotate(1000deg); }
 }
 
-#fog-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 999;
-}
-
 .fog-anim {
   background: url(https://i.imgur.com/3QCil4m.png) 0 0;
   height: 608px;
@@ -603,12 +613,6 @@ a:hover {
 @keyframes make-it-fog {
   0% { background-position: 0px; }
   100% { background-position: -4828px; }
-}
-
-#warp-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 999;
 }
 
 .warp-anim {
@@ -627,12 +631,6 @@ a:hover {
   100% { background-position-x: -3200px; background-position-y: -3200px; opacity: 10%; }
 }
 
-#mist-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 999;
-}
-
 .mist-anim {
   background: url(https://i.imgur.com/Ifo1hxk.png) 0 0;
   background-size: cover;
@@ -645,12 +643,6 @@ a:hover {
 @keyframes make-it-mist {
   0% { background-position: 0px; }
   100% { background-position: -4828px; }
-}
-
-#dark-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 999;
 }
 
 .dark-anim {
